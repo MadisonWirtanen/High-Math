@@ -1,0 +1,69 @@
+appId: cn.highmath.app
+productName: HighMath
+copyright: Copyright © 2026 HighMath
+
+directories:
+  output: dist
+  buildResources: build
+
+files:
+  - main.js
+  - preload.js
+  - package.json
+
+# Next.js standalone 应用放在 asar 之外（服务端要读写文件系统）
+extraResources:
+  - from: resources/app
+    to: app
+    filter:
+      - "**/*"
+  # 窗口 / 任务栏图标：放在 asar 外，主进程用 process.resourcesPath 直接读取
+  - from: build/icon.ico
+    to: icon.ico
+  - from: build/icon.png
+    to: icon.png
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+  icon: build/icon.ico
+  artifactName: HighMath-Setup-${version}.${ext}
+  # 跳过 exe 的签名与资源编辑：
+  #   electron-builder 为此需要下载 winCodeSign，而其中包含的 macOS dylib 符号链接
+  #   在 Windows 上创建需要管理员权限/开发者模式（实测报"客户端没有所需的特权"），
+  #   普通用户构建会失败。关掉后 exe 仍为 Electron 默认图标，
+  #   但安装包图标、运行时窗口/任务栏图标均已是 build/icon.ico，功能完全正常。
+  #   若你已开启 Windows 开发者模式，可把这里改成 true 让 exe 也带上图标。
+  signAndEditExecutable: false
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: HighMath
+  installerLanguages:
+    - zh_CN
+
+portable:
+  artifactName: HighMath-Portable-${version}.${ext}
+
+linux:
+  target:
+    - AppImage
+    - deb
+  category: Education
+  icon: build/icon.png
+  artifactName: HighMath-${version}.${ext}
+
+mac:
+  target:
+    - dmg
+  category: public.app-category.education
+  icon: build/icon.icns

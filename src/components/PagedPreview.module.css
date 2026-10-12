@@ -1,0 +1,60 @@
+/* src/components/PagedPreview.module.css — A4 分页预览容器 */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--hm-surface-2, #eceff3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: var(--hm-surface, #fff);
+  border-bottom: 1px solid var(--hm-border, #e3e6ec);
+  font-size: 12px;
+  color: var(--hm-text-2, #5b6472);
+  flex-shrink: 0;
+}
+
+.status {
+  font-variant-numeric: tabular-nums;
+}
+
+.hint {
+  margin-left: auto;
+  color: var(--hm-text-3, #98a1b0);
+  font-size: 11px;
+}
+
+.scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 20px;
+}
+
+.zoomBox {
+  width: 210mm;
+  margin: 0 auto;
+}
+
+.frame {
+  width: 210mm;
+  min-height: 297mm;
+  height: 297mm;
+  border: none;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.14);
+  display: block;
+}
+
+/* Paged.js 在 iframe 内生成 .pagedjs_page，这里让 iframe 高度自适应内容 */
+.scroll :global(.pagedjs_pages) {
+  display: block;
+}

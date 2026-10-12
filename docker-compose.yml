@@ -1,0 +1,18 @@
+services:
+  highmath:
+    build:
+      context: .
+      args:
+        INSTALL_PANDOC: "0"   # 改为 "1" 可启用 Word 导出（镜像会明显变大）
+    image: highmath:latest
+    container_name: highmath
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      VAULT_PATH: /data
+      BANK_DIR_NAME: 题库      # 若 /data 本身就是题库目录，改为 .
+      DEFAULT_GRADE: 高中
+    volumes:
+      # 左边换成你服务器上的题库目录
+      - ./mathbank:/data

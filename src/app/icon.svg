@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="hm-title hm-desc">
+  <title id="hm-title">HighMath 产品图标</title>
+  <desc id="hm-desc">深靛蓝到紫罗兰的圆角方形底板，右上角以柔和的暖金光晕自然晕染，中央一条白色正弦曲线，象征三角函数与数学之美。</desc>
+  <defs>
+    <linearGradient id="hmBase" gradientUnits="userSpaceOnUse" x1="26" y1="250" x2="230" y2="16">
+      <stop offset="0" stop-color="#16357F"/>
+      <stop offset="0.26" stop-color="#22358F"/>
+      <stop offset="0.52" stop-color="#332FA1"/>
+      <stop offset="0.76" stop-color="#4527AC"/>
+      <stop offset="1" stop-color="#5A21B6"/>
+    </linearGradient>
+    <radialGradient id="hmWarm" gradientUnits="userSpaceOnUse" cx="204" cy="28" r="158">
+      <stop offset="0" stop-color="#FFCF63" stop-opacity="0.44"/>
+      <stop offset="0.2" stop-color="#F9B449" stop-opacity="0.31"/>
+      <stop offset="0.42" stop-color="#E29A4B" stop-opacity="0.18"/>
+      <stop offset="0.64" stop-color="#BC7C63" stop-opacity="0.088"/>
+      <stop offset="0.83" stop-color="#996573" stop-opacity="0.03"/>
+      <stop offset="1" stop-color="#8B5A78" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hmGloss" gradientUnits="userSpaceOnUse" x1="128" y1="8" x2="128" y2="150">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="hmClip">
+      <rect x="8" y="8" width="240" height="240" rx="56"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#hmClip)">
+    <rect x="8" y="8" width="240" height="240" fill="url(#hmBase)"/>
+    <rect x="8" y="8" width="240" height="240" fill="url(#hmWarm)"/>
+    <rect x="8" y="8" width="240" height="240" fill="url(#hmGloss)"/>
+  </g>
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="none" stroke="#8E7BE0" stroke-opacity="0.38" stroke-width="1.5"/>
+  <path d="M44 128C62.667 66.667 81.333 66.667 100 128C118.667 189.333 137.333 189.333 156 128C174.667 66.667 193.333 66.667 212 128" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

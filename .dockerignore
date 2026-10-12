@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+.gitignore
+.cache
+desktop/resources
+desktop/dist
+desktop/node_modules
+LATEX
+docs
+*.log
+.env.local
+tsconfig.tsbuildinfo
+README.md

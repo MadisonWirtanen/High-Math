@@ -1,0 +1,19 @@
+{
+  "name": "highmath-desktop",
+  "version": "2.2.0",
+  "private": true,
+  "description": "HighMath 桌面版（Electron 外壳）",
+  "author": "HighMath",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux",
+    "dist:mac": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  }
+}
